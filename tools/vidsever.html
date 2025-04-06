@@ -1,0 +1,98 @@
+<!--
+* RESOURCES:
+* https://uploadcare.com/blog/how-to-make-a-drag-and-drop-file-uploader/
+* https://developer.mozilla.org/en-US/docs/Web/API/File_API/Using_files_from_web_applications
+* https://css-tricks.com/snippets/css/complete-guide-grid/
+* https://www.youtube.com/watch?v=ZtgNeXISE18
+* https://stackoverflow.com/questions/15287393/saving-an-image-from-canvas-in-a-zip
+* https://stackoverflow.com/questions/63654491/transform-and-download-a-image-from-url-using-javascript
+* https://github.com/josephrocca/getVideoFrames.js
+* https://stackoverflow.com/questions/32699721/javascript-extract-video-frames-reliably
+--> 
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Oscar's Tools with bootstrap from https://github.com/startbootstrap/startbootstrap-resume" />
+        <meta name="author" content="Oscar Lin" />
+        <title>Video Sever</title>
+        <!-- https://favicon.io/ --> 
+        <link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="../css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-bar fixed-top" id="sideNav">
+            <a class="navbar-brand js-scroll-trigger" href="#vidsever">
+                <span class="d-block d-lg-none">Home</span>
+                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="../assets/img/VidServer.gif" alt="..." /></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger text-primary" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger text-primary" href="#download">Download</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- -->
+        <div class="container-fluid p-0">
+            <section class="base-section text-white bg-secondary text-center" id="vidsever">
+                <div class="container d-flex align-items-center flex-column">
+                    <h1 class="vid">Video Sever</h1>
+                    <div id="dropbox" class="box">
+                        <button id="getVid" class="btn btn-lg btn-primary fileinput-button"> 
+                            <div class="row_1">Choose file</div>
+                            <div class="row_2">from your computer</div>
+                        </button>
+                        <input type="file" id="myVid" class="fileinput-button" accept="video/*" multiple="multiple" style="visibility: hidden; position: absolute; width: 1px; height: 1px;">
+                        <p>Drag and Drop Files Here</p>
+                    </div>
+                    <canvas id="canvasEl" class="can" hidden="true"></canvas>
+                </div>
+            </section>
+            <hr class="m-0" />
+            <section class="base-section bg-secondary" id="download">
+                <!--<ul class="down text-accent">
+                    <i class="fa-brands fa-windows fa-beat-fade fa-2xl"></i>
+                    <i class="fa-brands fa-linux fa-beat-fade fa-2xl"></i>
+                </ul>-->
+                <div class="container d-flex align-items-center flex-column">
+                    <h1>Download</h1>
+                    <div class="row text-primary">
+                        <div class="column">
+                            <a href="https://drive.google.com/file/d/1uSDST5VWp929LLUpvmEQ8U_amOg4M8Sn/view?usp=sharing">
+                            <i class="fa-brands fa-windows fa-10x"></i></a>
+                            <a href="https://drive.google.com/file/d/1uSDST5VWp929LLUpvmEQ8U_amOg4M8Sn/view?usp=sharing">
+                            <p>Windows (x64bit)</p></a>
+                            <a href="https://github.com/lios67/splice_snapshot"><p class="source text-accent">Source Code</p></a>
+                        </div>
+                        <div class="column">
+                            <a href="https://drive.google.com/file/d/1CfQOGKCO5sSa-e66tK5xg6j8iSPRjs8y/view?usp=sharing">
+                            <i class="fa-brands fa-linux fa-10x"></i></a>
+                            <a href="https://drive.google.com/file/d/1CfQOGKCO5sSa-e66tK5xg6j8iSPRjs8y/view?usp=sharing">
+                            <p>Linux (x64bit)</p></a>
+                            <a href="https://github.com/lios67/splice_snapshot">
+                            <p class="source text-accent">Source Code</p></a>
+                        </div>
+                    </div>
+                    <p class="anote text-accent">Take it to the next level—download the app for added functionality!</p>
+                </div>
+            </section>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script type="module" src="../js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    </body>
+</html>
